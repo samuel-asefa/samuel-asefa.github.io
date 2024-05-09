@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Samuel Asefa | Personal Website</title>
+    <title>Samuel Asefa</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image" href="images/favicon.png">
+    <!-- Custom Google Font | Noto Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header class="header">
         <a href="https://samuel-asefa.github.io/" class="title">Samuel Asefa</a>
         <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
+            <a href="#home" id="home">Home</a>
+            <a href="#skills" id="skills">Skills</a>
+            <a href="#experience" id="experience">Experience</a>
+            <a href="#projects" id="projects">Projects</a>
             <!--<a href="#contact">Contact</a>-->
-            <a href="#">Resume</a>
+            <a href="https://drive.google.com/file/d/1Lyt5z1dOXWIVX1dbPEbtJiEGaWn11A7e/view" target="_blank">Resume</a>
         </nav>
     </header>
     
     <div class="home">
-        <img src="images/personalpic.png" alt="Unable to show image." class="personalpic">
-        <h1 class="descriptionheader">About Samuel</h1>
-        <p class="description">Samuel Asefa is an Ethiopian-American high school student passionate about computer science and electrical engineering. He currently attends South Brunswick High School where he is involved in his schools VEX Robotics Team, Science Olympiad Team, Math Team, X-STEM club, and Computer Science club.</p>
+        <div class="portrait">
+            <img src="images/htmlicon.png" alt="Unable to show image." class="personalpic">
+        </div>
+        <div class="aboutme">
+            <h1 class="aboutme-header">About Samuel</h1>
+            <p class="aboutme-description">Samuel Asefa is an Ethiopian-American high school student passionate about computer science and electrical engineering. He currently attends South Brunswick High School where he is involved in his schools <a href="https://www.750w.team/" class="vex" target="_blank">VEX Robotics Team</a>, Science Olympiad Team, Math Team, X-STEM club, and Computer Science club.</p>
+        </div>
     </div>
 
     <div class="skills">
         <h1 class="skillsheader">Skills</h1>
-        <h3 class="skillsdescription">Below are the programming languages and tools I am profient at.</h3>
-        <a class="skillstext"><img src="images/htmlicon.png" class="skillsimgs">HTML</a>
-        <a class="skillstext"><img src="images/cssicon.png" class="skillsimgs">CSS</a>
-        <a class="skillstext"><img src="images/javaicon.png" class="skillsimgs">Java</a>
-        <a class="skillstext"><img src="images/javascripticon.png" class="skillsimgs">JavaScript</a>
-        <a class="skillstext"><img src="images/c++icon.png" class="skillsimgs">C++</a>
-        <a class="skillstext"><img src="images/luaicon.png" class="skillsimgs">Lua</a>
-        <a class="skillstext"><img src="images/arduinoicon.png" class="skillsimgs">Arduino</a>
-        <a class="skillstext"><img src="images/cadicon.png" class="skillsimgs">CAD</a>
+        <h3 class="skillsdescription">Below are the programming languages and tools I am proficent at.</h3>
+        <div class="skillsbody">    
+            <div class="skill1"><img src="images/htmlicon.png" class="skillsimgs">HTML</a>
+            <div class="skill2"><img src="images/cssicon.png" class="skillsimgs">CSS</a>
+            <div class="skill3"><img src="images/javaicon.png" class="skillsimgs">Java</a>
+            <div class="skill4"><img src="images/javascripticon.png" class="skillsimgs">JavaScript</a>
+            <div class="skill5"><img src="images/c++icon.png" class="skillsimgs">C++</a>
+            <div class="skill6"><img src="images/luaicon.png" class="skillsimgs">Lua</a>
+            <div class="skill7"><img src="images/arduinoicon.png" class="skillsimgs">Arduino</a>
+            <div class="skill8"><img src="images/cadicon.png" class="skillsimgs">CAD</a>
+        </div>
+        
     </div>
 
     <div class="experience">
@@ -50,8 +60,8 @@
     </div>
 
     <footer class="footer">
-        <a href="https://www.linkedin.com/in/samuelasefa/"><img src="images/linkedin.png" alt="LinkedIn" class="footerimg"></a>
-        <a href="https://www.instagram.com/sammy.asefa/"><img src="images/instagram.png" alt="Instagram" class="footerimg"></a>
+        <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" class="footerimg"></a>
+        <a href="https://www.instagram.com/sammy.asefa/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="footerimg"></a>
     </footer>
 </body>
 </html>

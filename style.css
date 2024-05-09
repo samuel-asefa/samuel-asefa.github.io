@@ -1,10 +1,30 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: rgb(0, 90, 180);
-    font-family: 'Segoe UI';
+    background-color: var(--MainColor);
+    font-family: 'Noto Sans', sans-serif;
     color: white;
     font-weight: 500;
+}
+
+.body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body::webkit-scrollbar {
+    display: none;
+}
+
+/* Changes color when text is highlighted */
+::selection {
+    background-color: white;
+    color: var(--MainColor)
+}
+
+:root {
+    --MainColor: rgb(0, 90, 180);
+    --SecondaryColor: rgb(0, 80, 160);
 }
 
 header {
@@ -12,8 +32,9 @@ header {
     top: 0%;
     left: 0%;
     width: 100%;
-    background-color: rgb(0, 80, 160);
-    padding: 2%;
+    height: 200%;
+    background-color: var(--SecondaryColor);
+    padding: 1%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,81 +45,128 @@ header {
     font-size: 200%;
     flex: none;
     text-decoration: none;
-    background-color: rgb(0, 80, 160);
-    padding-left: 15%;
+    text-align: center;
+    background-color: var(--SecondaryColor);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav {
-    background-color: rgb(0, 80, 160);
+    background-color: var(--SecondaryColor);
     display: flex;
     text-decoration: none;
     font-size: 150%;
     float: right;
-    padding-right: 20%;
+    width: 50%
 }
 
 .nav a {
-    background-color: rgb(0, 80, 160);
+    background-color: var(--SecondaryColor);
     margin-left: 5%;
     /*text-decoration: none;*/
+    font-weight: 600;
+    color: white;
     text-align: left;   
-    text-decoration: underline 0.11em rgba(255, 255, 255, 0);
+    text-decoration: none;
+    position: relative;
 }
 
-.nav a:hover {
-    text-decoration-color: rgba(255, 255, 255, 1);
-
-    transition: 0.3s;
-
+.nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 6%;
+    background: white;
+    border-radius: 100px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
+
+.nav a:hover::before {
+    transform: scaleX(1);
+}
+
+/* HOME */
 
 .home {
     width: 100%;
     position: relative;
-    align-items: center;
-    margin-top: 10%;
-    
+    align-items: none;
+    margin-top: 5%;
+
     display: flex;
     justify-content: space-between;
 }
 
-.personalpic {
+.portrait {
+    position: relative;
+    left: 8%;
     
-    margin-left: 13%;
-    margin-right: 20%;
-    border: 5px solid rgb(0, 80, 160);
-    border-radius: 5%;
-    
+    width: 50%;
+    align-content: center;
 }
 
-.descriptionheader {
-    position: absolute;
-    left: 55%;
+
+.personalpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    border: 5px solid var(--SecondaryColor);
+    border-radius: 5%;
+}
+
+.aboutme {
+    position: relative;
+    right: 20%;
+    
+    width: 25%;
+}
+
+.aboutme-header {
+    position: relative;
+    text-align: center;
     font-size: 175%;
     font-weight: 700;
     text-decoration: underline;
-    display: flex;
-    flex: none;
-    margin-bottom: 25%;
-    margin-left: 0%;
     align-items: center;
 }
 
-.description {
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    font-size: 125%;
+.aboutme-description {
+    position: relative;
+    top: 10%;
+    font-size: 120%;
     word-wrap: normal;
-    width: 30%;
-    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.vex {
+    position: relative;
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.vex:hover {
+    box-shadow: inset 10em 0 0 0 white;
+    color: var(--MainColor);
+
 }
 
 .skills {
     position: static;
     margin-top: 3%;
     text-align: center;
-    align-items: center;
+    width: 100%;
+    /*align-items: center;*/
 }
 
 .skillsheader {
@@ -113,28 +181,51 @@ header {
     position: static;
     margin-top: 1%;
     font-size: 125%;
+    margin-bottom: 1%;
+    
 }
 
-
-.skills a {
-    margin-left: 5%;
+.skillsbody {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    gap: 2%;
 }
 
-.skillsimgs {
-    display: block;
-    margin-top: 1%;
-    height: 2%;
+.skillsbody a {
+    /*list-style-type: none;*/
+    flex: 5%;
+    margin-left: 0%;
+}
+
+.skillsimgs {   
+    margin: 0 auto;
+    left: 3%;
+    right: auto;
+    margin-bottom: 1.5%;
+    top: 10%;
     width: 2%;
-    margin-right: 0%;
-    margin-left: 50%;
+    /*height: 2%;
+    width: 2%;*/
+    color: rgb(255, 255, 255, 0.8);
+}
+
+.skills a:hover {
+    color:rgb(255, 255, 255, 1);
+    transition: 0.3s;
 }
 
 .skillstext {
     left: 0%;
+    width: 1%;
     font-size: 125%;
+    font-weight: 500;
     margin-top: 5%;
     margin-left: 2%;
-    text-align: justify;
+    text-align: center;
 }
 
 .experience {
@@ -180,15 +271,16 @@ header {
 .footer {
     position: static;
     bottom: 0;  
-    background-color: rgb(0, 80, 160);
+    background-color: var(--SecondaryColor);
+    height: 2%;
     width: 100%;
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 1%;
     align-items: center;
 }
 
 .footer a {
-    background-color: rgb(0, 80, 160);
+    background-color: var(--SecondaryColor);
     width: 3%;
     height: 3%;
     align-content: center;
