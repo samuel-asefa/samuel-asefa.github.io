@@ -24,8 +24,8 @@ body::webkit-scrollbar {
 }
 
 :root {
-    --MainColor: rgb(0, 80, 160);
-    --SecondaryColor: rgb(0, 70, 140);
+    --MainColor: rgb(0, 85, 170);
+    --SecondaryColor: rgb(0, 75, 150);
 }
 
 header {
