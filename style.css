@@ -6,6 +6,7 @@
     color: white;
     font-weight: 500;
     scroll-behavior: smooth;
+    z-index: 1;
 }
 
 .body {
@@ -24,8 +25,20 @@ body::webkit-scrollbar {
 }
 
 :root {
-    --MainColor: rgb(0, 85, 170);
-    --SecondaryColor: rgb(0, 75, 150);
+    --MainColor: rgb(0, 70, 140);
+    --SecondaryColor: rgb(0, 60, 120);
+}
+
+.gridoverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;   
+    background-image: url(images\gridoverlay.png);
+    background-size: cover;
+
+    z-index: 0;
 }
 
 header {
@@ -167,10 +180,26 @@ header {
 
 .outreach {
     position: relative;
-    margin-top: 20%;
+    margin-top: 15%;
     display: block;
     text-align: center;
     text-decoration: none;
+}
+
+.outreachimg {
+    width: 2.5em; /* Adjust the size of the icons */
+    height: 2.5em;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 6%;
+    background-color: var(--MainColor);
+    transform: rotate(0);
+    transition: transform 0.25s ease;
+}
+
+.outreachimg:hover {
+    transform: rotate(20deg);
+    background-color: var(--MainColor);
 }
 
 .contactbutton {
@@ -181,6 +210,7 @@ header {
     padding-bottom: 3%;
     padding-left: 6%;
     padding-right: 6%;
+    margin-left: 3%;
     border-style: solid;
     border-radius: 0.5em;
     transition: all 0.3s ease;
@@ -320,6 +350,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 0 1.5em; /* Adjust the spacing between icons */
+    background-color: var(--SecondaryColor);
 }
 
 .footerimg {
