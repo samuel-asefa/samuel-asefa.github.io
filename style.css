@@ -92,8 +92,8 @@ header {
 }
 
 .resumelinkicon {
-    width: 0.75em;
-    height: 0.75em;
+    width: 0.02em;
+    height: 0.02em;
     margin-top: 0.8%;
     margin-left: 1.35%;
     background-color: var(--SecondaryColor);
