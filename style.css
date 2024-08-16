@@ -105,34 +105,17 @@ header {
     width: 100%;
     position: relative;
     align-items: none;
-    margin-top: 5%;
-
+    margin-top: 4%;
+    margin-bottom: 4%;
     display: flex;
     justify-content: space-between;
 }
 
-.portrait {
-    position: relative;
-    left: 8%;
-    
-    width: 50%;
-    align-content: center;
-}
 
-
-.personalpic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-
-    border: 5px solid var(--SecondaryColor);
-    border-radius: 5%;
-}
 
 .aboutme {
     position: relative;
-    right: 18%; /*Should be 14.5%*/
+    left: 18%; /*Should be 14.5%*/
     width: 31%;
 }
 
@@ -207,6 +190,25 @@ header {
     border-color: white;
     background-color: white;
     color: var(--MainColor);    
+}
+
+.portrait {
+    position: relative;
+    right: 8%;
+    margin-right: 10%;
+    width: 32%;
+    align-content: center;
+}
+
+
+.personalpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    border: 5px solid var(--SecondaryColor);
+    border-radius: 5%;
 }
 
 .skills {
