@@ -274,7 +274,8 @@ header {
 }
 
 .skillsimgs {
-    width: 40px;
+    max-height: 40px;
+    width: auto;
     height: auto;
     display: inline-block;
     margin-bottom: 25%;
@@ -294,6 +295,7 @@ header {
 .experience {
     position: static;
     width: 100%;
+    
     margin-top: 3%;
 }
 
@@ -362,6 +364,7 @@ header {
     margin-right: 25%;
     text-align: left;
 }
+
 
 .footer {
     display: flex;
