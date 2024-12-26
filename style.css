@@ -18,7 +18,6 @@ body::webkit-scrollbar {
     display: none;
 }
 
-/* Changes color when text is highlighted */
 ::selection {
     background-color: white;
     color: var(--MainColor)
@@ -193,7 +192,7 @@ header {
     margin-top: 6%;
     background-color: var(--MainColor);
     transform: rotate(0);
-    transition: transform 0.25s ease;
+    transition: transform 0.35s ease;
 }
 
 .outreachimg:hover {
@@ -237,7 +236,7 @@ header {
     width: 50%;
 
     border: 5px solid var(--SecondaryColor);
-    border-radius: 5%;
+    border-radius: 0%;
 }
 
 .skills {
@@ -365,20 +364,35 @@ header {
     text-align: left;
 }
 
+h5 {
+    font-size: 150%;
+    font-weight: 700;
+    background-color: var(--SecondaryColor);
+}
 
 .footer {
+    background-color: var(--SecondaryColor);
+    display: relative;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.footer-text {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--SecondaryColor);
     height: 60px;
     width: 100%;
-    margin-top: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    margin-top: 0.4%;    
 }
 
-.footer a {
+.footer-content a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,7 +405,7 @@ header {
     height: 40px;
     background-color: var(--SecondaryColor);
     transform: rotate(0);
-    transition: transform 0.25s ease;
+    transition: transform 0.35s ease;
 }
 
 .footerimg:hover {
