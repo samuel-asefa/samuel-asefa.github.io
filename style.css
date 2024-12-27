@@ -150,27 +150,14 @@ header {
     width: 100%;
 }
 
-.vex {
+.aboutMeLink {
     position: relative;
     box-shadow: inset 0 0 0 0 white;
     color: white;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.vex:hover {
-    box-shadow: inset 10em 0 0 0 white;
-    color: var(--MainColor);
-
-}
-
-.robozone {
-    position: relative;
-    box-shadow: inset 0 0 0 0 white;
-    color: white;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-.robozone:hover {
+.aboutMeLink:hover {
     box-shadow: inset 10em 0 0 0 white;
     color: var(--MainColor);
 
@@ -227,7 +214,6 @@ header {
     width: 28%;
     align-content: center;
 }
-
 
 .personalpic {
     display: block;
