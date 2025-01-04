@@ -183,7 +183,7 @@ header {
 }
 
 .outreachimg:hover {
-    transform: rotate(20deg);
+    transform: rotate(15deg);
     background-color: var(--MainColor);
 }
 
@@ -395,6 +395,6 @@ h5 {
 }
 
 .footerimg:hover {
-    transform: rotate(20deg);
+    transform: rotate(15deg);
     background-color: var(--SecondaryColor);
 }
