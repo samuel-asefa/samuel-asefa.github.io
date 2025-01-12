@@ -18,6 +18,10 @@ body::webkit-scrollbar {
     display: none;
 }
 
+html {
+    scroll-behavior: smooth;;
+}
+
 ::selection {
     background-color: white;
     color: var(--MainColor)
@@ -41,7 +45,7 @@ body::webkit-scrollbar {
 }
 
 header {
-    position: static;
+    position: sticky;
     top: 0%;
     left: 0%;
     width: 100%;
@@ -49,6 +53,7 @@ header {
     background-color: var(--SecondaryColor);
     padding-top: 1%;
     padding-bottom: 1%;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,7 +61,7 @@ header {
 
 .title {
     font-weight: 700;
-    font-size: 200%;
+    font-size: 180%;
     flex: none;
     text-decoration: none;
     text-align: center;
@@ -331,6 +336,8 @@ header {
 
 .projectname {
     position: relative;
+    font-weight: 600;
+    font-size: 125%;
     box-shadow: inset 0 0 0 0 white;
     color: white;
     text-shadow: rgba(255, 255, 255, 0) 0px 0px 0px;
@@ -338,7 +345,7 @@ header {
 }
 
 .projectname:hover {
-    text-shadow: rgba(255, 255, 255, 1) 0px 0px 25px;
+    text-shadow: rgba(255, 255, 255, 1) 0px 0px 0.7em;
 }
 
 .projectinfo {
@@ -382,13 +389,13 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1.5em; /* Adjust the spacing between icons */
+    margin: 0 1.2em; /* Adjust the spacing between icons */
     background-color: var(--SecondaryColor);
 }
 
 .footerimg {
-    width: 40px; /* Adjust the size of the icons */
-    height: 40px;
+    width: 32px; /* Adjust the size of the icons */
+    height: 32px;
     background-color: var(--SecondaryColor);
     transform: rotate(0);
     transition: transform 0.35s ease;
