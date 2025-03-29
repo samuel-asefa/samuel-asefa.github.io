@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typed.js effect
     const options = {
-        strings: ['Computer Science Enthusiast', 'Robotics Competitor', 'Full-Stack Developer', 'Electrical Engineering Student'],
+        strings: ['Student', 'Engineer', 'Programmer', 'Leader'],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 1500,
@@ -293,10 +293,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typedElement) {
         new Typed(typedElement, {
             strings: [
-              "Computer Science Student",
-              "Robotics Enthusiast",
-              "Web Developer",
-              "Problem Solver"
+              "Student",
+              "Engineer",
+              "Programmer",
+              "Leader"
             ],
             typeSpeed: 50,
             backSpeed: 30,
