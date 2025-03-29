@@ -1,90 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Samuel Asefa</title>
+    <title>Samuel Asefa | Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Samuel Asefa - Computer Science & Electrical Engineering Student">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="main.js"></script>
-    <link rel="icon" type="image" href="images/favicon.png">
-    <!-- Noto Sans -->
+    <script src="main.js" defer></script>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="https://samuel-asefa.github.io/" class="title">Samuel Asefa</a>
-        <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <!--<a href="#contact">Contact</a>-->
-            <a href="https://drive.google.com/file/d/18_zwnRZX1-83Pl4z5wtYMUcsn2tMlgN4/view?usp=sharing" target="_blank">Resume</a>
-            <img src="images/linkicon.png" alt="" class="resumelinkicon">
-        </nav>
+    
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Samuel Asefa</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="https://drive.google.com/file/d/18_zwnRZX1-83Pl4z5wtYMUcsn2tMlgN4/view?usp=sharing" target="_blank" class="resume-btn">Resume <i class="fas fa-external-link-alt"></i></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <div class="gridoverlay"></div>
-        
-    <div id="home" class="home">
-        <div class="aboutme">
-            <h2 class="aboutme-header">About Me</h2>
-            <p class="aboutme-description">Hey, I'm Sammy! I'm a high school student at South Brunswick High School passionate about computer science and electrical engineering. I am currently involved in my schools VEX Robotics Club on team <a href="https://750w.github.io" class="aboutMeLink" target="_blank">750W</a>, Science Olympiad Team, <a href="https://x-stem.github.io/" class="aboutMeLink" target="_blank">X-STEM</a> club (Executive Board), Aerospace Team, Math Team, and Computer Science club. I am also the Co-Founder of <a href="https://robozonenj.org/" class="aboutMeLink" target="_blank">RoboZone</a>, an organization dedicated to teaching students about computer science, electronics, and robotics topics.</p>
-            <div class="outreach">
-                <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" class="outreachimg"></a>
-                <a href="https://github.com/samuel-asefa" target="_blank"><img src="images/github.png" alt="github" class="outreachimg"></a>
-                <a href="https://www.youtube.com/@samuel-asefa" target="_blank"><img src="images/youtubeicon.png" alt="YouTube" class="outreachimg"></a>
-                <a href="https://www.instagram.com/sammy.asefa/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="outreachimg"></a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate-text">Hello, I'm <span class="highlight">Samuel Asefa</span></h1>
+                <h2 class="typed-text"></h2>
+                <p>High school student passionate about computer science, electrical engineering, and robotics.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn primary-btn">View Projects</a>
+                    <a href="#about" class="btn secondary-btn">About Me</a>
                 </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/samuel-asefa" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.youtube.com/@samuel-asefa" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/sammy.asefa/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/picture.png" alt="Samuel Asefa" class="profile-image">
+                <div class="image-outline"></div>
+            </div>
         </div>
-        <div class="portrait">
-            <img src="images/picture.png" alt="Unable to show image." class="personalpic">
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-    </div>
+    </section>
 
-    <div id="skills" class="skills">
-        <h2 class="skillsheader">Skills</h2>
-        <p class="skillsdescription">These are the programming languages and tools I am proficient at.</h3>
-        <div class="skillsbody">
-            <div><img src="images/htmlicon.png" class="skillsimgs"><span>HTML</span></div>
-            <div><img src="images/cssicon.png" class="skillsimgs"><span>CSS</span></div>
-            <div><img src="images/javascripticon.png" class="skillsimgs"><span>JavaScript</span></div>
-            <div><img src="images/javaicon.png" class="skillsimgs"><span>Java</span></div>
-            <div><img src="images/c++icon.png" class="skillsimgs"><span>C++</span></div>
-            <div><img src="images/csharpicon.png" class="skillsimgs"><span>C#</span></div>
-            <div><img src="images/fluttericon.png" class="skillsimgs"><span>Flutter</span></div>
-            <div><img src="images/firebaseicon.png" class="skillsimgs"><span>Firebase</span></div>
-            <div><img src="images/pythonicon.png" class="skillsimgs"><span>Python</span></div>
-            <div><img src="images/luaicon.png" class="skillsimgs"><span>Lua</span></div>
-            <div><img src="images/goicon.png" class="skillsimgs"><span>Go</span></div>
-            <div><img src="images/vexicon.png" class="skillsimgs"><span>VEX</span></div>
-            <div><img src="images/arduinoicon.png" class="skillsimgs"><span>Arduino</span></div>
-            <div><img src="images/cadicon.png" class="skillsimgs"><span>CAD</span></div> <!--14-->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="section-line"></div>
         </div>
-    </div>
-
-    <div id="projects" class="projects">
-        <h2 class="projectsheader">Projects</h2>
-        <!-- <p class="projectsdescription">Here are some projects that I have created.</h3> -->
-        <h3><a href="https://roboroute.netlify.app/" class="projectname" target="_blank">RoboRoute</a></h3>
-        <p class="projectinfo">A VEX High Stakes auton and programming skills simulator.</p>
-        <h3><a href="https://studently.netlify.app" class="projectname" target="_blank">Studently</a></h3>
-        <p class="projectinfo">A task list website tailored for students with a focus on intuitive task managment and organization.</p>
-        <h3><a href="https://github.com/samuel-asefa/PasswordPal" class="projectname" target="_blank">PasswordPal</a></h3>
-        <p class="projectinfo">An application that stores emails, passwords, and other account information.</p>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-text">
-            <h5>Samuel Asefa</h5>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hey, I'm Sammy! I'm a high school student at South Brunswick High School passionate about computer science and electrical engineering.</p>
+                <p>I am currently involved in my school's VEX Robotics Club on team <a href="https://750w.github.io" target="_blank">750W</a>, Science Olympiad Team, <a href="https://x-stem.github.io/" target="_blank">X-STEM</a> club (Executive Board), Aerospace Team, Math Team, and Computer Science club.</p> 
+                <p>I am also the Co-Founder of <a href="https://robozonenj.org/" target="_blank">RoboZone</a>, an organization dedicated to teaching students about computer science, electronics, and robotics topics.</p>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Engineering</h3>
+                        <p>I enjoy building applications and websites that solve real-world problems.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Robotics</h3>
+                        <p>Competing and designing robots with a focus on innovative solutions.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Programming</h3>
+                        <p>Finding elegant solutions to complex engineering challenges.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="section-header">
+            <h2>My Skills</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-content">
+            <p class="skills-description">These are the programming languages and tools I am proficient in:</p>
+            <div class="skills-categories">
+                <div class="skills-category">
+                    <h3>Web Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="HTML">
+                            <img src="images/htmlicon.png" alt="HTML">
+                            <span>HTML</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item" data-skill="CSS">
+                            <img src="images/cssicon.png" alt="CSS">
+                            <span>CSS</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <img src="images/javascripticon.png" alt="JavaScript">
+                            <span>JavaScript</span>
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Java">
+                            <img src="images/javaicon.png" alt="Java">
+                            <span>Java</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item" data-skill="C++">
+                            <img src="images/c++icon.png" alt="C++">
+                            <span>C++</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                        <div class="skill-item" data-skill="C#">
+                            <img src="images/csharpicon.png" alt="C#">
+                            <span>C#</span>
+                            <div class="skill-level" data-level="70"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
+                            <img src="images/pythonicon.png" alt="Python">
+                            <span>Python</span>
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Go">
+                            <img src="images/goicon.png" alt="Go">
+                            <span>Go</span>
+                            <div class="skill-level" data-level="65"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Lua">
+                            <img src="images/luaicon.png" alt="Lua">
+                            <span>Lua</span>
+                            <div class="skill-level" data-level="60"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Technologies & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Flutter">
+                            <img src="images/fluttericon.png" alt="Flutter">
+                            <span>Flutter</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Firebase">
+                            <img src="images/firebaseicon.png" alt="Firebase">
+                            <span>Firebase</span>
+                            <div class="skill-level" data-level="70"></div>
+                        </div>
+                        <div class="skill-item" data-skill="VEX">
+                            <img src="images/vexicon.png" alt="VEX">
+                            <span>VEX</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Arduino">
+                            <img src="images/arduinoicon.png" alt="Arduino">
+                            <span>Arduino</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item" data-skill="CAD">
+                            <img src="images/cadicon.png" alt="CAD">
+                            <span>CAD</span>
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/roboroute2.png" alt="RoboRoute Project" onerror="this.src='images/fallback-project.png'">
+                </div>
+                <div class="project-content">
+                    <h3>RoboRoute</h3>
+                    <p>A VEX High Stakes auton and programming skills simulator.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://roboroute.netlify.app/" target="_blank" class="btn project-btn">Live Demo</a>
+                        <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/studently.png" alt="Studently Project" onerror="this.src='images/fallback-project.png'">
+                </div>
+                <div class="project-content">
+                    <h3>Studently</h3>
+                    <p>A task list website tailored for students with a focus on intuitive task management and organization.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://studently.netlify.app" target="_blank" class="btn project-btn">Live Demo</a>
+                        <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/passwordpal.png" alt="PasswordPal Project" onerror="this.src='images/fallback-project.png'">
+                </div>
+                <div class="project-content">
+                    <h3>PasswordPal</h3>
+                    <p>An application that stores emails, passwords, and other account information.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>.YML</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/samuel-asefa/PasswordPal" target="_blank" class="btn project-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card add-project">
+                <div class="add-project-content">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>More Projects Coming Soon</h3>
+                    <p>Stay tuned for future projects!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:contact@samuelasefa.com">contact@samuelasefa.com</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank">linkedin.com/in/samuelasefa</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/samuel-asefa" target="_blank">github.com/samuel-asefa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="footer-content">
-            <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" class="footerimg"></a>
-        <a href="https://github.com/samuel-asefa" target="_blank"><img src="images/github.png" alt="github" class="footerimg"></a>
-        <a href="https://www.youtube.com/@samuel-asefa" target="_blank"><img src="images/youtubeicon.png" alt="YouTube" class="footerimg"></a>
-        <a href="https://www.instagram.com/sammy.asefa/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="footerimg"></a>
+            <div class="footer-logo">Samuel Asefa</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/samuelasefa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/samuel-asefa" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/@samuel-asefa" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/sammy.asefa/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Samuel Asefa. All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 </body>
 </html>
