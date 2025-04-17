@@ -1098,3 +1098,61 @@ footer {
 .tilt-inner {
     transform: translateZ(20px);
 }
+
+
+/* Project Links Styling */
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Main button styling (Live Demo/GitHub buttons) */
+  .btn.project-btn {
+    display: inline-block;
+    background-color: #00c8ff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .btn.project-btn:hover {
+    background-color: #00c8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* GitHub icon link */
+  .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+  
+  .project-link:hover {
+    color: #00c8ff;
+    transform: scale(1.1);
+  }
+  
+  /* When in dark mode (if your site has dark mode) */
+  @media (prefers-color-scheme: dark) {
+    .project-link {
+      color: #ddd;
+    }
+    
+    .btn.project-btn {
+      background-color: #00c8ff;
+    }
+    
+    .btn.project-btn:hover {
+      background-color: #00c8ff;
+    }
+  }
