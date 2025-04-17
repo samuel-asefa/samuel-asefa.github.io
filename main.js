@@ -307,3 +307,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   });
+
+  // Fixed typewriter initialization - remove the duplicate initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize loading screen
+    const loadingScreen = document.querySelector('.loading-screen');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                // Run animations after loading
+                animateElements();
+            }, 500);
+        }, 1500);
+    });
+    
+    // Typed.js effect - Fixed to only initialize once
+    const typedElement = document.querySelector('.typed-text');
+    if (typedElement) {
+        new Typed(typedElement, {
+            strings: [
+                "Software Developer",
+                "Robotics Engineer",
+                "Tech Innovator",
+                "STEM Advocate"
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+    
+    // Rest of your existing code...
+    // Custom cursor effect
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    // ... (keep all other existing code)
+});
+
+// Remove this duplicate initialization function that's at the end of your file
+// document.addEventListener('DOMContentLoaded', function() {
+//     const typedElement = document.querySelector('.typed-text');
+//     if (typedElement) {
+//         new Typed(typedElement, {...});
+//     }
+// });
