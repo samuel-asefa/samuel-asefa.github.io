@@ -5,7 +5,6 @@ import Typed from 'typed.js';
 interface Skill {
   name: string;
   icon: string;
-  level: number;
 }
 
 interface Project {
@@ -422,7 +421,6 @@ function renderSkillCategory(containerId: string, skills: Skill[]): void {
     <div class="skill-item" data-skill="${skill.name}">
       <img src="${skill.icon}" alt="${skill.name} icon" loading="lazy">
       <span>${skill.name}</span>
-      <div class="skill-level" data-level="${skill.level}"></div>
     </div>
   `).join('');
 }
