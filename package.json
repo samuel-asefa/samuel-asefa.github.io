@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "samuel-asefa-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "typescript": "~5.8.3",
-    "vite": "^7.1.7"
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "typed.js": "^2.1.0"
   }
 }
