@@ -260,10 +260,11 @@ function initializeMobileMenu(): void {
 
 function initializeSmoothScrolling(): void {
   document.querySelectorAll('a[href^="#"]').forEach((anchor: Element): void => {
-    anchor.addEventListener('click', function(e: Event): void {
+    anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event): void { // ✨ Fixed!
       e.preventDefault();
       
-      const href = (this as HTMLAnchorElement).getAttribute('href');
+      // You no longer need the type assertion '(this as HTMLAnchorElement)'
+      const href = this.getAttribute('href'); 
       if (!href || href === '#') return;
       
       const targetElement = document.querySelector(href) as HTMLElement;
@@ -276,6 +277,7 @@ function initializeSmoothScrolling(): void {
     });
   });
 }
+
 
 function initializeScrollEffects(): void {
   window.addEventListener('scroll', (): void => {
