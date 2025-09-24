@@ -1,7 +1,6 @@
 import './style.css'
 import Typed from 'typed.js';
 
-// Type definitions
 interface Skill {
   name: string;
   icon: string;
@@ -18,27 +17,34 @@ interface Project {
   };
 }
 
-// Skills data
-const skillsData = {
+interface ContactMethod {
+  iconClass: string;
+  title: string;
+  text: string;
+  url: string;
+  isMail?: boolean;
+}
+
+const SKILLS_DATA = {
   programmingLanguages: [
     { name: 'HTML', icon: '../images/html.png' },
     { name: 'CSS', icon: '../images/css.png' },
     { name: 'JavaScript', icon: '../images/javascript.png' },
+    { name: 'TypeScript', icon: '../images/typescript.png' },
     { name: 'Python', icon: '../images/python.png' },
     { name: 'Java', icon: '../images/java.png' },
     { name: 'C++', icon: '../images/cpp.png' },
     { name: 'C#', icon: '../images/csharp.png' },
     { name: 'Swift', icon: '../images/swift.png' },
-    { name: 'Lua', icon: '../images/lua.png' },
-    { name: 'Go', icon: '../images/go.png' }
+    { name: 'Go', icon: '../images/go.png' },
   ],
   frameworks: [
+    { name: 'React', icon: '../images/react.png' },
+    { name: 'Node.js', icon: '../images/node.png' },
     { name: 'Tailwind', icon: '../images/tailwind.png' },
-    { name: 'ReactJS', icon: '../images/react.png' },
-    { name: 'NodeJS', icon: '../images/node.png' },
     { name: 'Flask', icon: '../images/flask.png' },
     { name: 'Flutter', icon: '../images/flutter.png' },
-    { name: 'Unity', icon: '../images/unity.png' }
+    { name: 'Unity', icon: '../images/unity.png' },
   ],
   technologies: [
     { name: 'Firebase', icon: '../images/firebase.png'},
@@ -46,15 +52,14 @@ const skillsData = {
     { name: 'Fusion 360', icon: '../images/fusion.png'},
     { name: 'Inventor', icon: '../images/inventor.png'},
     { name: 'OnShape', icon: '../images/onshape.png'},
-    { name: '3D Printing', icon: '../images/3dprint.png'}
+    { name: '3D Printing', icon: '../images/3dprint.png'},
   ]
 };
 
-// Projects data
-const projectsData: Project[] = [
+const PROJECTS_DATA: Project[] = [
   {
     title: 'RoboRoute',
-    description: 'A VEX High Stakes auton and programming skills simulator.',
+    description: 'An advanced path planning and autonomous routine simulator for the VEX Robotics Competition game, High Stakes.',
     image: '../images/roboroute.png',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     links: {
@@ -64,7 +69,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Sciolytics',
-    description: 'An application that stores emails, passwords, and other account information.',
+    description: 'A comprehensive platform for Science Olympiad teams to track progress, manage resources, and analyze performance data.',
     image: '../images/sciolytics.png',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     links: {
@@ -74,7 +79,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Mathify',
-    description: 'A New Jersey Math League Practice Tool.',
+    description: 'A dedicated practice tool for students preparing for the New Jersey Math League, featuring a vast question bank and timer.',
     image: '../images/mathify.png',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     links: {
@@ -84,7 +89,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Heavy?',
-    description: 'An VEX V5 weight calculation tool.',
+    description: 'A lightweight utility for VEX Robotics teams to quickly calculate the weight of various robot components and materials.',
     image: '../images/heavy.png',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     links: {
@@ -94,7 +99,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Studently',
-    description: 'An intuitive take on task lists.',
+    description: 'An intuitive and minimalist task management application designed to help students organize their academic workload.',
     image: '../images/studently.png',
     technologies: ['Svelte', 'JavaScript', 'HTML'],
     links: {
@@ -104,7 +109,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Graphify',
-    description: 'A simple algorithm visualizer.',
+    description: 'A Java-based application for visualizing common graph theory algorithms, aiding in the understanding of complex data structures.',
     image: '../images/graphify.png',
     technologies: ['Java', 'JPanel'],
     links: {
@@ -113,364 +118,322 @@ const projectsData: Project[] = [
   }
 ];
 
-// DOM loaded event listener
-document.addEventListener('DOMContentLoaded', (): void => {
-  initializeApp();
-});
+const CONTACT_DATA: ContactMethod[] = [
+  {
+    iconClass: 'fas fa-envelope',
+    title: 'Email',
+    text: 'samuelasefa20@gmail.com',
+    url: 'mailto:samuelasefa20@gmail.com',
+    isMail: true
+  },
+  {
+    iconClass: 'fab fa-linkedin',
+    title: 'LinkedIn',
+    text: 'linkedin.com/in/samuelasefa',
+    url: 'https://www.linkedin.com/in/samuelasefa/'
+  },
+  {
+    iconClass: 'fab fa-github',
+    title: 'GitHub',
+    text: 'github.com/samuel-asefa',
+    url: 'https://github.com/samuel-asefa'
+  }
+];
 
-function initializeApp(): void {
-  // Initialize loading screen
-  handleLoadingScreen();
-  
-  // Initialize typed.js
-  initializeTypedText();
-  
-  // Initialize custom cursor
-  initializeCustomCursor();
-  
-  // Initialize mobile menu
-  initializeMobileMenu();
-  
-  // Initialize smooth scrolling
-  initializeSmoothScrolling();
-  
-  // Initialize scroll effects
-  initializeScrollEffects();
-  
-  // Initialize back to top button
-  initializeBackToTop();
-  
-  // Initialize intersection observer
-  initializeIntersectionObserver();
-  
-  // Create particles
-  createParticles();
-  
-  // Render skills and projects
-  renderSkills();
-  renderProjects();
-  
-  // Initialize project card effects
-  initializeProjectCardEffects();
-}
+class PortfolioApp {
+  private typedInstance: Typed | null = null;
+  private intersectionObserver: IntersectionObserver | null = null;
 
-function handleLoadingScreen(): void {
-  const loadingScreen = document.querySelector('.loading-screen') as HTMLElement;
-  
-  window.addEventListener('load', (): void => {
-    setTimeout((): void => {
-      if (loadingScreen) {
-        loadingScreen.style.opacity = '0';
-        setTimeout((): void => {
-          loadingScreen.style.display = 'none';
-          animateElements();
-        }, 500);
-      }
-    }, 1500);
-  });
-}
+  constructor() {
+    this.initializeApp();
+  }
 
-function initializeTypedText(): void {
-  const typedElement = document.querySelector('.typed-text') as HTMLElement;
-  
-  if (typedElement) {
-    new Typed(typedElement, {
-      strings: [
-        'Student',
-        'Engineer', 
-        'Programmer',
-        'Leader'
-      ],
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 2000,
-      startDelay: 500,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|'
+  private initializeApp(): void {
+    this.handleLoadingScreen();
+    this.initializeTyped();
+    this.initializeCustomCursor();
+    this.initializeMobileMenu();
+    this.initializeSmoothScrolling();
+    this.initializeHeaderScroll();
+    this.initializeBackToTop();
+    this.initializeIntersectionObserver();
+    this.renderAllComponents();
+    this.initializeCircuitBackground();
+  }
+
+  private handleLoadingScreen(): void {
+    const loadingScreen = document.getElementById('loading-screen');
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => loadingScreen.style.display = 'none', 500);
+        }
+      }, 1000);
     });
   }
-}
 
-function initializeCustomCursor(): void {
-  const cursor = document.querySelector('.cursor') as HTMLElement;
-  const cursorFollower = document.querySelector('.cursor-follower') as HTMLElement;
+  private initializeTyped(): void {
+    const typedElement = document.querySelector('.typed-text');
+    if (typedElement) {
+      this.typedInstance = new Typed(typedElement, {
+        strings: ['Student', 'Software Engineer', 'Robotics Enthusiast', 'Problem Solver'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        startDelay: 500,
+        loop: true,
+      });
+    }
+  }
 
-  if (!cursor || !cursorFollower) return;
+  private initializeCustomCursor(): void {
+    const cursor = document.getElementById('cursor');
+    if (!cursor) return;
 
-  document.addEventListener('mousemove', (e: MouseEvent): void => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    setTimeout((): void => {
-      cursorFollower.style.left = e.clientX + 'px';
-      cursorFollower.style.top = e.clientY + 'px';
-    }, 50);
-  });
+    document.addEventListener('mousemove', (e: MouseEvent) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
 
-  document.addEventListener('mousedown', (): void => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
-    cursorFollower.style.transform = 'translate(-50%, -50%) scale(0.6)';
-  });
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '30px';
+        cursor.style.height = '30px';
+        cursor.style.backgroundColor = 'rgba(0, 170, 255, 0.2)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '20px';
+        cursor.style.height = '20px';
+        cursor.style.backgroundColor = 'transparent';
+      });
+    });
+  }
 
-  document.addEventListener('mouseup', (): void => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-  });
+  private initializeMobileMenu(): void {
+    const hamburger = document.querySelector('.hamburger') as HTMLButtonElement;
+    const navLinks = document.querySelector('.nav-links') as HTMLElement;
+    if (!hamburger || !navLinks) return;
 
-  // Cursor grow effect on interactive elements
-  const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .about-card');
+    const toggleMenu = () => {
+      const isActive = hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', String(isActive));
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (hamburger.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
   
-  interactiveElements.forEach((element: Element): void => {
-    element.addEventListener('mouseenter', (): void => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      cursorFollower.style.backgroundColor = 'rgba(41, 41, 41, 0.1)';
-      cursorFollower.style.borderColor = 'rgba(65, 65, 65, 0.8)';
+  private initializeSmoothScrolling(): void {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const targetElement = document.querySelector(href) as HTMLElement;
+        if (targetElement) {
+          const headerOffset = (document.getElementById('header') as HTMLElement)?.offsetHeight || 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
-    
-    element.addEventListener('mouseleave', (): void => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorFollower.style.backgroundColor = 'transparent';
-      cursorFollower.style.borderColor = 'var(--primary-color)';
+  }
+
+  private initializeHeaderScroll(): void {
+    const header = document.getElementById('header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+      this.updateActiveNavLink();
     });
-  });
-}
+  }
 
-function initializeMobileMenu(): void {
-  const hamburger = document.querySelector('.hamburger') as HTMLElement;
-  const navLinks = document.querySelector('.nav-links') as HTMLElement;
-  
-  if (!hamburger || !navLinks) return;
+  private updateActiveNavLink(): void {
+    let currentSectionId = '';
+    const sections = document.querySelectorAll('main section[id]');
+    const headerOffset = (document.getElementById('header') as HTMLElement)?.offsetHeight || 80;
 
-  hamburger.addEventListener('click', (): void => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  // Close mobile menu when a link is clicked
-  document.querySelectorAll('.nav-link').forEach((link: Element): void => {
-    link.addEventListener('click', (): void => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
-}
-
-function initializeSmoothScrolling(): void {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor: Element): void => {
-    anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event): void { // ✨ Fixed!
-      e.preventDefault();
-      
-      // You no longer need the type assertion '(this as HTMLAnchorElement)'
-      const href = this.getAttribute('href'); 
-      if (!href || href === '#') return;
-      
-      const targetElement = document.querySelector(href) as HTMLElement;
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
+    sections.forEach(section => {
+      const sectionElement = section as HTMLElement;
+      const sectionTop = sectionElement.offsetTop - headerOffset - 1;
+      if (window.scrollY >= sectionTop) {
+        currentSectionId = sectionElement.id;
       }
     });
-  });
-}
 
-
-function initializeScrollEffects(): void {
-  window.addEventListener('scroll', (): void => {
-    // Header scroll effect
-    const header = document.querySelector('header') as HTMLElement;
-    if (header) {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      const linkElement = link as HTMLAnchorElement;
+      linkElement.classList.remove('active');
+      if (linkElement.getAttribute('href') === `#${currentSectionId}`) {
+        linkElement.classList.add('active');
       }
-    }
-    
-    // Highlight active nav link
-    highlightNavOnScroll();
-  });
-}
-
-function initializeBackToTop(): void {
-  const backToTopBtn = document.querySelector('.back-to-top') as HTMLElement;
-  
-  if (!backToTopBtn) return;
-
-  window.addEventListener('scroll', (): void => {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
-  
-  backToTopBtn.addEventListener('click', (): void => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
     });
-  });
-}
+  }
 
-function highlightNavOnScroll(): void {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  let current = '';
-  
-  sections.forEach((section: Element): void => {
-    const sectionElement = section as HTMLElement;
-    const sectionTop = sectionElement.offsetTop - 100;
-    const sectionHeight = sectionElement.clientHeight;
+  private initializeBackToTop(): void {
+    const backToTopBtn = document.querySelector('.back-to-top') as HTMLButtonElement;
+    if (!backToTopBtn) return;
     
-    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-      current = sectionElement.getAttribute('id') || '';
-    }
-  });
-  
-  navLinks.forEach((link: Element): void => {
-    link.classList.remove('active');
-    const href = (link as HTMLAnchorElement).getAttribute('href');
-    if (href === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-}
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
-function initializeIntersectionObserver(): void {
-  const observerOptions: IntersectionObserverInit = {
-    threshold: 0.2
-  };
+  private initializeIntersectionObserver(): void {
+    this.intersectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about, .skills-category, .project-card, .contact-card, .section-header').forEach(el => {
+      el.classList.add('fade-in');
+      this.intersectionObserver?.observe(el);
+    });
+  }
+
+  private renderAllComponents(): void {
+    this.renderSkillCategory('programming-languages-grid', SKILLS_DATA.programmingLanguages);
+    this.renderSkillCategory('frameworks-grid', SKILLS_DATA.frameworks);
+    this.renderSkillCategory('technologies-grid', SKILLS_DATA.technologies);
+    this.renderProjects();
+    this.renderContactInfo();
+  }
+
+  private renderSkillCategory(containerId: string, skills: Skill[]): void {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = skills.map(skill => `
+      <div class="skill-item" title="${skill.name}">
+        <img src="${skill.icon}" alt="${skill.name} icon" loading="lazy">
+        <span>${skill.name}</span>
+      </div>
+    `).join('');
+  }
+
+  private renderProjects(): void {
+    const container = document.getElementById('projects-grid');
+    if (!container) return;
+    container.innerHTML = PROJECTS_DATA.map(project => `
+      <article class="project-card fade-in">
+        <div class="project-img">
+          <img src="${project.image}" alt="${project.title} screenshot" loading="lazy">
+        </div>
+        <div class="project-content">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <div class="project-tech">
+            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+          </div>
+          <div class="project-links">
+            ${project.links.demo ? `<a href="${project.links.demo}" target="_blank" rel="noopener" class="btn primary-btn">Live Demo</a>` : ''}
+            ${project.links.github ? `<a href="${project.links.github}" target="_blank" rel="noopener" class="btn secondary-btn">GitHub</a>` : ''}
+          </div>
+        </div>
+      </article>
+    `).join('');
+    document.querySelectorAll('.project-card').forEach(el => this.intersectionObserver?.observe(el));
+  }
   
-  const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]): void => {
-    entries.forEach((entry: IntersectionObserverEntry): void => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        
-        // Animate skill levels when skills section is visible
-        if (entry.target.id === 'skills') {
-          animateSkillLevels();
+  private renderContactInfo(): void {
+    const container = document.getElementById('contact-info-grid');
+    if (!container) return;
+    container.innerHTML = CONTACT_DATA.map(contact => `
+      <div class="contact-card fade-in">
+        <i class="${contact.iconClass}"></i>
+        <h3>${contact.title}</h3>
+        <a href="${contact.url}" ${!contact.isMail ? 'target="_blank" rel="noopener"' : ''}>${contact.text}</a>
+      </div>
+    `).join('');
+    document.querySelectorAll('.contact-card').forEach(el => this.intersectionObserver?.observe(el));
+  }
+
+  private initializeCircuitBackground(): void {
+    const container = document.getElementById('circuit-background');
+    if (!container) return;
+
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
+    container.appendChild(svg);
+
+    const nodes: { x: number, y: number }[] = [];
+    const gridSize = 80;
+    const numCols = Math.ceil(window.innerWidth / gridSize);
+    const numRows = Math.ceil(window.innerHeight / gridSize);
+
+    for (let i = 0; i <= numCols; i++) {
+      for (let j = 0; j <= numRows; j++) {
+        if (Math.random() > 0.5) {
+          nodes.push({ x: i * gridSize, y: j * gridSize });
         }
       }
-    });
-  }, observerOptions);
-  
-  document.querySelectorAll('section').forEach((section: Element): void => {
-    observer.observe(section);
-  });
-}
-
-function animateSkillLevels(): void {
-  const skillItems = document.querySelectorAll('.skill-item');
-  
-  skillItems.forEach((item: Element): void => {
-    const skillItem = item as HTMLElement;
-    const level = skillItem.querySelector('.skill-level') as HTMLElement;
-    const skillLevel = level.getAttribute('data-level');
-    
-    if (skillLevel) {
-      setTimeout((): void => {
-        level.style.setProperty('--percent', skillLevel + '%');
-      }, 300);
     }
-  });
-}
 
-function createParticles(): void {
-  const particlesContainer = document.querySelector('.particles-container') as HTMLElement;
-  if (!particlesContainer) return;
+    nodes.forEach(node => {
+      const circle = document.createElementNS(svgNS, 'circle');
+      circle.setAttribute('cx', String(node.x));
+      circle.setAttribute('cy', String(node.y));
+      circle.setAttribute('r', '2');
+      circle.setAttribute('fill', 'var(--accent-color)');
+      svg.appendChild(circle);
+    });
 
-  const particlesCount = 50;
-  const colors = ['#e0e0e0', '#c7c7c7', '#b0b0b0', '#999999'];
-  
-  for (let i = 0; i < particlesCount; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dist = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
+        if (dist < gridSize * 1.5 && Math.random() > 0.8) {
+          const line = document.createElementNS(svgNS, 'line');
+          line.setAttribute('x1', String(nodes[i].x));
+          line.setAttribute('y1', String(nodes[i].y));
+          line.setAttribute('x2', String(nodes[j].x));
+          line.setAttribute('y2', String(nodes[j].y));
+          line.setAttribute('stroke', 'var(--border-color)');
+          line.setAttribute('stroke-width', '1');
+          svg.insertBefore(line, svg.firstChild);
+        }
+      }
+    }
     
-    const posX = Math.random() * 100;
-    const posY = Math.random() * 100;
-    const size = Math.random() * 10 + 3;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const animDuration = Math.random() * 20 + 10;
-    
-    particle.style.left = `${posX}%`;
-    particle.style.top = `${posY}%`;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.backgroundColor = color;
-    particle.style.animationDuration = `${animDuration}s`;
-    
-    particlesContainer.appendChild(particle);
+    setInterval(() => {
+        const lines = svg.querySelectorAll('line');
+        const randomIndex = Math.floor(Math.random() * lines.length);
+        const randomLine = lines[randomIndex];
+        if (randomLine) {
+            randomLine.style.transition = 'stroke 0.2s';
+            randomLine.setAttribute('stroke', 'var(--accent-color)');
+            setTimeout(() => {
+                randomLine.setAttribute('stroke', 'var(--border-color)');
+            }, 300);
+        }
+    }, 100);
   }
 }
 
-function renderSkills(): void {
-  renderSkillCategory('programming-languages', skillsData.programmingLanguages);
-  renderSkillCategory('frameworks', skillsData.frameworks);
-  renderSkillCategory('technologies', skillsData.technologies);
-}
-
-function renderSkillCategory(containerId: string, skills: Skill[]): void {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  container.innerHTML = skills.map((skill: Skill): string => `
-    <div class="skill-item" data-skill="${skill.name}">
-      <img src="${skill.icon}" alt="${skill.name} icon" loading="lazy">
-      <span>${skill.name}</span>
-    </div>
-  `).join('');
-}
-
-function renderProjects(): void {
-  const container = document.getElementById('projects-container');
-  if (!container) return;
-
-  container.innerHTML = projectsData.map((project: Project): string => `
-    <article class="project-card">
-      <div class="project-img">
-        <img src="${project.image}" alt="${project.title}" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <div class="project-tech">
-          ${project.technologies.map((tech: string): string => `<span>${tech}</span>`).join('')}
-        </div>
-        <div class="project-links">
-          ${project.links.demo ? `<a href="${project.links.demo}" target="_blank" rel="noopener" class="btn project-btn">Live Demo</a>` : ''}
-          ${project.links.github ? `<a href="${project.links.github}" target="_blank" rel="noopener" class="btn project-btn">GitHub</a>` : ''}
-        </div>
-      </div>
-    </article>
-  `).join('');
-}
-
-function initializeProjectCardEffects(): void {
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  projectCards.forEach((card: Element): void => {
-    card.addEventListener('mouseenter', (): void => {
-      card.classList.add('active');
-    });
-    
-    card.addEventListener('mouseleave', (): void => {
-      card.classList.remove('active');
-    });
-  });
-}
-
-function animateElements(): void {
-  document.body.classList.add('loaded');
-  
-  const heroText = document.querySelector('.hero-text') as HTMLElement;
-  const heroImage = document.querySelector('.hero-image') as HTMLElement;
-  
-  if (heroText) heroText.classList.add('animate');
-  if (heroImage) heroImage.classList.add('animate');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  new PortfolioApp();
+});
