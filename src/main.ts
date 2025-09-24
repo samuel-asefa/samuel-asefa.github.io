@@ -22,32 +22,32 @@ interface Project {
 // Skills data
 const skillsData = {
   programmingLanguages: [
-    { name: 'HTML', icon: '/images/html.png', level: 90 },
-    { name: 'CSS', icon: '/images/css.png', level: 85 },
-    { name: 'JavaScript', icon: '/images/javascript.png', level: 80 },
-    { name: 'Python', icon: '/images/python.png', level: 75 },
-    { name: 'Java', icon: '/images/java.png', level: 60 },
-    { name: 'C++', icon: '/images/cpp.png', level: 70 },
-    { name: 'C#', icon: '/images/csharp.png', level: 65 },
-    { name: 'Swift', icon: '/images/swift.png', level: 50 },
-    { name: 'Lua', icon: '/images/lua.png', level: 55 },
-    { name: 'Go', icon: '/images/go.png', level: 50 }
+    { name: 'HTML', icon: '/images/html.png' },
+    { name: 'CSS', icon: '/images/css.png' },
+    { name: 'JavaScript', icon: '/images/javascript.png' },
+    { name: 'Python', icon: '/images/python.png' },
+    { name: 'Java', icon: '/images/java.png' },
+    { name: 'C++', icon: '/images/cpp.png' },
+    { name: 'C#', icon: '/images/csharp.png' },
+    { name: 'Swift', icon: '/images/swift.png' },
+    { name: 'Lua', icon: '/images/lua.png' },
+    { name: 'Go', icon: '/images/go.png' }
   ],
   frameworks: [
-    { name: 'Tailwind', icon: '/images/tailwind.png', level: 90 },
-    { name: 'ReactJS', icon: '/images/react.png', level: 85 },
-    { name: 'NodeJS', icon: '/images/node.png', level: 80 },
-    { name: 'Flask', icon: '/images/flask.png', level: 70 },
-    { name: 'Flutter', icon: '/images/flutter.png', level: 70 },
-    { name: 'Unity', icon: '/images/unity.png', level: 65 }
+    { name: 'Tailwind', icon: '/images/tailwind.png' },
+    { name: 'ReactJS', icon: '/images/react.png' },
+    { name: 'NodeJS', icon: '/images/node.png' },
+    { name: 'Flask', icon: '/images/flask.png' },
+    { name: 'Flutter', icon: '/images/flutter.png' },
+    { name: 'Unity', icon: '/images/unity.png' }
   ],
   technologies: [
-    { name: 'Firebase', icon: '/images/firebase.png', level: 90 },
-    { name: 'Arduino', icon: '/images/arduino.png', level: 85 },
-    { name: 'Fusion 360', icon: '/images/fusion.png', level: 75 },
-    { name: 'Inventor', icon: '/images/inventor.png', level: 70 },
-    { name: 'OnShape', icon: '/images/onshape.png', level: 80 },
-    { name: '3D Printing', icon: '/images/3dprint.png', level: 65 }
+    { name: 'Firebase', icon: '/images/firebase.png'},
+    { name: 'Arduino', icon: '/images/arduino.png'},
+    { name: 'Fusion 360', icon: '/images/fusion.png'},
+    { name: 'Inventor', icon: '/images/inventor.png'},
+    { name: 'OnShape', icon: '/images/onshape.png'},
+    { name: '3D Printing', icon: '/images/3dprint.png'}
   ]
 };
 
