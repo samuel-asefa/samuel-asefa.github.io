@@ -176,10 +176,10 @@ function initializeTypedText(): void {
   if (typedElement) {
     new Typed(typedElement, {
       strings: [
-        'Software Developer',
-        'Robotics Engineer', 
-        'Tech Innovator',
-        'STEM Advocate'
+        'Student',
+        'Engineer', 
+        'Programmer',
+        'Leader'
       ],
       typeSpeed: 60,
       backSpeed: 40,
@@ -225,8 +225,8 @@ function initializeCustomCursor(): void {
     element.addEventListener('mouseenter', (): void => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
       cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      cursorFollower.style.backgroundColor = 'rgba(0, 200, 255, 0.1)';
-      cursorFollower.style.borderColor = 'rgba(0, 200, 255, 0.8)';
+      cursorFollower.style.backgroundColor = 'rgba(41, 41, 41, 0.1)';
+      cursorFollower.style.borderColor = 'rgba(65, 65, 65, 0.8)';
     });
     
     element.addEventListener('mouseleave', (): void => {
@@ -386,7 +386,7 @@ function createParticles(): void {
   if (!particlesContainer) return;
 
   const particlesCount = 50;
-  const colors = ['#4a9aff', '#66ccff', '#7affb9', '#52fff7'];
+  const colors = ['#e0e0e0', '#c7c7c7', '#b0b0b0', '#999999'];
   
   for (let i = 0; i < particlesCount; i++) {
     const particle = document.createElement('div');
